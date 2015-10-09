@@ -51,7 +51,7 @@ axis(1, at = 1:40, las=2)
 
 #gate type
 tomt=list(brun=c(1,3), lblaa=c(6,8,9), rosa=c(11,13,14), orange=c(16,18,19), rod=c(21,23,24), gul=c(26,27,29), gronn=c(31,32,34),mblaa=c(37,39))
-name=c('brun','lblaa','rosa','orange','rod','gul','gronn','mblaa')
+name=c('Brown','Light Blue','Pink','Orange','Red','Yellow','Green','Dark Blue')
 tomtint=rep(0,8)
 for(i in 1:length(tomt)){
   tomtint[i]=sum(brettetn[1,tomt[[i]]])/length(tomt[[i]])
