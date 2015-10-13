@@ -58,3 +58,51 @@ for(i in 1:length(tomt)){
 }
 plot(1:8,tomtint,type='h',xaxt='n')
 axis(1, 1:8, name)
+
+
+
+
+
+
+
+# test
+nr=c(1,seq(2.625,9.375,length.out=9),11)
+x=c(nr[10:1],nr[rep(1,10)],nr[2:11],nr[rep(11,10)])
+y=c(nr[rep(1,10)],nr[2:11],nr[rep(11,10)],nr[10:1])
+#z=brettetn[1,]
+col=c("#945439","#00aef7","#945439","#cde6d0","#090a0e","#aadfff","#cb1093","#aadfff","#aadfff","#ef900e","#df3892","#fff800","#df3892","#df3892","#090a0e","#fe9216","#00aef7","#fe9216","#fe9216","#f01a18","#e32026","#00b3fd","#e32026","#e32026","#090a0e","#fff102","#fff102","#faf8fb","#fff102","#0373b3","#18b657","#18b657","#00aef7","#18b657","#090a0e","#e0881e","#086cc4","#ffed03","#086cc4","#020605")
+#image(x,y,z)
+library(rgl)
+monopolyplot(brettetn[1,])
+#open3d()
+#plot3d(x,y,z,type="h",lwd=20,col=col)
+#surface3d(x, y, z, col="red",pch=16)
+#show2d(filename="C:\\Users\\Gauss\\Documents\\R\\Git\\Monopol\\Monopol\\gameImage.png")
+
+monopolyplot<-function(values,...){
+  nr=c(1,seq(2.625,9.375,length.out=9),11)
+  x=c(nr[10:1],nr[rep(1,10)],nr[2:11],nr[rep(11,10)])
+  y=c(nr[rep(1,10)],nr[2:11],nr[rep(11,10)],nr[10:1])
+  z=values
+  col=c("#945439","#00aef7","#945439","#cde6d0","#090a0e","#aadfff","#cb1093","#aadfff","#aadfff","#ef900e","#df3892","#fff800","#df3892","#df3892","#090a0e","#fe9216","#00aef7","#fe9216","#fe9216","#f01a18","#e32026","#00b3fd","#e32026","#e32026","#090a0e","#fff102","#fff102","#faf8fb","#fff102","#0373b3","#18b657","#18b657","#00aef7","#18b657","#090a0e","#e0881e","#086cc4","#ffed03","#086cc4","#020605")
+  open3d()
+  plot3d(x,y,z,type="h",lwd=20,col=col)
+  show2d(filename="C:\\Users\\Gauss\\Documents\\R\\Git\\Monopol\\Monopol\\gameImage.png")
+}
+
+
+
+library(png)
+
+#Replace the directory and file information with your info
+ima <- readPNG("C:\\Users\\Gauss\\Documents\\R\\Git\\Monopol\\Monopol\\gameImage.png")
+
+#Set up the plot area
+plot(1:11, type='n', main="Plotting Over an Image", xlab="x", ylab="y")
+
+#Get the plot information so the image will fill the plot box, and draw it
+lim <- par()
+rasterImage(ima, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
+
+
+
