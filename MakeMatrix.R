@@ -87,5 +87,5 @@ monopolyplot<-function(values,...){
   col=c("#945439","#00aef7","#945439","#cde6d0","#090a0e","#aadfff","#cb1093","#aadfff","#aadfff","#ef900e","#df3892","#fff800","#df3892","#df3892","#090a0e","#fe9216","#00aef7","#fe9216","#fe9216","#f01a18","#e32026","#00b3fd","#e32026","#e32026","#090a0e","#fff102","#fff102","#faf8fb","#fff102","#0373b3","#18b657","#18b657","#00aef7","#18b657","#090a0e","#e0881e","#086cc4","#ffed03","#086cc4","#020605")
   open3d()
   plot3d(x,y,z,type="h",lwd=20,col=col)
-  show2d(filename="C:\\Users\\Gauss\\Documents\\R\\Git\\Monopol\\Monopol\\gameImage.png")
+  show2d(filename="gameImage.png")
 }
