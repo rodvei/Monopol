@@ -89,20 +89,3 @@ monopolyplot<-function(values,...){
   plot3d(x,y,z,type="h",lwd=20,col=col)
   show2d(filename="C:\\Users\\Gauss\\Documents\\R\\Git\\Monopol\\Monopol\\gameImage.png")
 }
-
-
-
-library(png)
-
-#Replace the directory and file information with your info
-ima <- readPNG("C:\\Users\\Gauss\\Documents\\R\\Git\\Monopol\\Monopol\\gameImage.png")
-
-#Set up the plot area
-plot(1:11, type='n', main="Plotting Over an Image", xlab="x", ylab="y")
-
-#Get the plot information so the image will fill the plot box, and draw it
-lim <- par()
-rasterImage(ima, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
-
-
-
