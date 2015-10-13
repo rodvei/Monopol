@@ -51,10 +51,41 @@ axis(1, at = 1:40, las=2)
 
 #gate type
 tomt=list(brun=c(1,3), lblaa=c(6,8,9), rosa=c(11,13,14), orange=c(16,18,19), rod=c(21,23,24), gul=c(26,27,29), gronn=c(31,32,34),mblaa=c(37,39))
-name=c('brun','lblaa','rosa','orange','rod','gul','gronn','mblaa')
+name=c('Brown','Light Blue','Pink','Orange','Red','Yellow','Green','Dark Blue')
 tomtint=rep(0,8)
 for(i in 1:length(tomt)){
   tomtint[i]=sum(brettetn[1,tomt[[i]]])/length(tomt[[i]])
 }
 plot(1:8,tomtint,type='h',xaxt='n')
 axis(1, 1:8, name)
+
+
+
+
+
+
+
+# test
+nr=c(1,seq(2.625,9.375,length.out=9),11)
+x=c(nr[10:1],nr[rep(1,10)],nr[2:11],nr[rep(11,10)])
+y=c(nr[rep(1,10)],nr[2:11],nr[rep(11,10)],nr[10:1])
+#z=brettetn[1,]
+col=c("#945439","#00aef7","#945439","#cde6d0","#090a0e","#aadfff","#cb1093","#aadfff","#aadfff","#ef900e","#df3892","#fff800","#df3892","#df3892","#090a0e","#fe9216","#00aef7","#fe9216","#fe9216","#f01a18","#e32026","#00b3fd","#e32026","#e32026","#090a0e","#fff102","#fff102","#faf8fb","#fff102","#0373b3","#18b657","#18b657","#00aef7","#18b657","#090a0e","#e0881e","#086cc4","#ffed03","#086cc4","#020605")
+#image(x,y,z)
+library(rgl)
+monopolyplot(brettetn[1,])
+#open3d()
+#plot3d(x,y,z,type="h",lwd=20,col=col)
+#surface3d(x, y, z, col="red",pch=16)
+#show2d(filename="C:\\Users\\Gauss\\Documents\\R\\Git\\Monopol\\Monopol\\gameImage.png")
+
+monopolyplot<-function(values,...){
+  nr=c(1,seq(2.625,9.375,length.out=9),11)
+  x=c(nr[10:1],nr[rep(1,10)],nr[2:11],nr[rep(11,10)])
+  y=c(nr[rep(1,10)],nr[2:11],nr[rep(11,10)],nr[10:1])
+  z=values
+  col=c("#945439","#00aef7","#945439","#cde6d0","#090a0e","#aadfff","#cb1093","#aadfff","#aadfff","#ef900e","#df3892","#fff800","#df3892","#df3892","#090a0e","#fe9216","#00aef7","#fe9216","#fe9216","#f01a18","#e32026","#00b3fd","#e32026","#e32026","#090a0e","#fff102","#fff102","#faf8fb","#fff102","#0373b3","#18b657","#18b657","#00aef7","#18b657","#090a0e","#e0881e","#086cc4","#ffed03","#086cc4","#020605")
+  open3d()
+  plot3d(x,y,z,type="h",lwd=20,col=col)
+  show2d(filename="C:\\Users\\Gauss\\Documents\\R\\Git\\Monopol\\Monopol\\gameImage.png")
+}
